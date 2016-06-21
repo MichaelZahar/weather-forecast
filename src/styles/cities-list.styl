@@ -1,0 +1,101 @@
+.cities-list
+  list-style: none
+
+  .city-item
+    overflow: hidden
+    position: relative
+    height: 80px
+
+    color: #fff
+    background: linear-gradient(to bottom, rgba(136,191,232,1) 0%,rgba(112,176,224,1) 100%)
+
+  .delete
+    position: absolute
+    left: 15px
+    top: 15px
+    width: 50px
+    height: 50px
+
+    border: none
+    background: #d00
+    border-radius: 50%
+
+    color: #fff
+    font-size: 5em
+    line-height: 50px
+    text-align: center
+    text-decoration: none
+
+    transform: scale(0, 0)
+
+  .container
+    height: 100%
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.6)
+
+    transform: translate(0, 0)
+
+    .status
+      float: left
+      position: relative
+      top: 15px
+      left: 15px
+
+    .info
+      padding: 0 12em 0 80px
+
+      .details
+        height: 30px
+        line-height: 40px
+        font-size: 1.6em
+        font-weight: 300
+
+      .name
+        height: 50px
+        font-size: 4.2em
+        line-height: 40px
+        white-space: nowrap
+
+    .degrees
+      width: 2em
+      float: right
+      margin-right: 25px
+
+      font-size: 6em
+      line-height: 80px
+
+      text-align: right
+
+  // Отображение режима редактивроания (с кнопками удаления)
+  &.edit
+    .container
+      transform: translate(60px, 0)
+      transition: transform 0.3s
+
+    .city-item .delete
+      transform: scale(1, 1)
+      transition-property: transform
+      transition-duration: 0.2s
+      transition-timing-function: cubic-bezier(.78,1.89,.83,.67)
+      transition-delay: 0.15s
+
+@media screen and (max-width: 470px)
+  .cities-list .container .info
+    .details
+      display: none
+
+    .name
+      overflow: hidden
+
+      height: 80px
+      line-height: 80px
+      text-overflow: ellipsis
+
+@media screen and (max-width: 420px)
+  .cities-list
+    font-size: 0.75em
+
+
+@media screen and (max-width: 320px)
+  .cities-list
+    font-size: 0.6em
